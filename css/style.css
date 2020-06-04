@@ -135,6 +135,10 @@ p {
   color: var(--p-grey);
 }
 
+.p-italic {
+  font-style: italic;
+}
+
 .text-center {
   text-align: center;
 }
@@ -214,6 +218,10 @@ p {
 }
 
 .bottom-header-links a:hover {
+  color: var(--primary-color);
+}
+
+.bottom-header-links a.current {
   color: var(--primary-color);
 }
 
@@ -606,6 +614,187 @@ p {
   opacity: 0.8;
 }
 
+/* Rooms Page */
+#header-rooms {
+  position: relative;
+  height: 50vh;
+}
+
+#header-rooms::after {
+  content: "";
+  background: url("../img/rooms.jpg") no-repeat center center/cover;
+  filter: brightness(40%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Main Header */
+.main-header-rooms {
+  background: rgba(0, 0, 0, 0.22);
+  opacity: 0.8;
+}
+
+/* About Page */
+/* Resort Story */
+#resort-story .container {
+  display: flex;
+}
+
+#resort-story .container > div {
+  flex: 1;
+}
+
+.resort-story-right span {
+  color: var(--primary-color);
+}
+
+.resort-story-right h5 {
+  font-size: 15px;
+  color: var(--light-grey);
+  letter-spacing: 1px;
+}
+
+.resort-story-right h2 {
+  position: relative;
+}
+
+.resort-story-right h2::before {
+  content: "";
+  background: #000;
+  width: 70px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* Why */
+#why {
+  background: var(--rooms-color);
+}
+
+.why-header {
+  margin-bottom: 70px;
+}
+
+.why-header h2 span {
+  color: var(--primary-color);
+}
+
+.why-flex {
+  display: flex;
+}
+
+.why-flex > div {
+  flex: 1;
+}
+
+.why-left li {
+  border-bottom: 1px solid var(--light-grey);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+}
+
+.why-left li:last-child {
+  border-bottom: none;
+}
+
+.why-left li a {
+  color: var(--p-grey);
+  font-size: 22px;
+}
+
+.why-left li a:hover {
+  color: var(--primary-color);
+}
+
+.why-left a:hover i {
+  transition: 0.3s;
+  transform: translateX(10px);
+}
+
+.why-left i {
+  color: var(--primary-color);
+  margin-right: 20px;
+}
+
+/* Why Image Slider */
+.slider {
+  position: relative;
+  height: 400px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide:nth-child(1) {
+  background: url(../img/room1.png) no-repeat center center/cover;
+  height: 400px;
+}
+
+.slide:nth-child(2) {
+  background: url(../img/room2.png) no-repeat center center/cover;
+  height: 400px;
+}
+
+.slide:nth-child(3) {
+  background: url(../img/room3.png) no-repeat center center/cover;
+  height: 400px;
+}
+
+.slide:nth-child(4) {
+  background: url(../img/room4.jpg) no-repeat center center/cover;
+  height: 400px;
+}
+
+.slide:nth-child(5) {
+  background: url(../img/room5.jpg) no-repeat center center/cover;
+  height: 400px;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 45%;
+  left: 10px;
+}
+
+.buttons button {
+  border: none;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background: var(--primary-color);
+  color: #333;
+}
+
 /* Tablet Mobile Versions */
 @media (max-width: 968px) {
   /* Burger Menu */
@@ -647,6 +836,7 @@ p {
   .top-header .container {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
 
   /* Showcase */
@@ -745,5 +935,40 @@ p {
 
   .social-icons {
     margin: auto;
+  }
+
+  /* About Page */
+  /* Resort Story */
+  #resort-story .container {
+    flex-direction: column;
+  }
+
+  #resort-story img {
+    width: 100%;
+  }
+
+  .resort-story-right {
+    text-align: center;
+  }
+
+  .resort-story-right h2::before {
+    display: none;
+  }
+
+  /* Why */
+  .why-flex {
+    flex-direction: column;
+  }
+
+  .why-left {
+    margin: auto;
+  }
+
+  .why-left li {
+    width: 100%;
+  }
+
+  .why-right img {
+    width: 100%;
   }
 }
