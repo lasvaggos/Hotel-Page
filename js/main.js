@@ -1,3 +1,11 @@
+// Hamburger Menu
+const burger = document.querySelector(".burger-menu");
+const ul = document.querySelector(".bottom-header-links ul");
+
+burger.addEventListener("click", () => {
+  ul.classList.toggle("show");
+});
+
 // Counter
 const counters = document.querySelectorAll(".counter");
 const speed = 500;
@@ -19,14 +27,6 @@ counters.forEach((counter) => {
   };
 
   updateCount();
-});
-
-// Hamburger Menu
-const burger = document.querySelector(".burger-menu");
-const ul = document.querySelector(".bottom-header-links ul");
-
-burger.addEventListener("click", () => {
-  ul.classList.toggle("show");
 });
 
 // Slider
@@ -77,8 +77,3 @@ prev.addEventListener("click", (e) => {
     slideInterval = setInterval(nextSlide, intervalTime);
   }
 });
-
-// Auto slide
-if (auto) {
-  slideInterval = setInterval(nextSlide, intervalTime);
-}
